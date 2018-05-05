@@ -1,0 +1,27 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/SECAdmin/v15/.suo
+/.vs/config/applicationhost.config
+/packages
+/SECAdmin.Data/bin
+/SECAdmin.Data/Migrations/201805052000370_initial.resx
+/SECAdmin.Data/Migrations/201805052000370_initial.Designer.cs
+/SECAdmin.Data/Migrations/201805052000370_initial.cs
+/SECAdmin.Data/obj
+/SECAdmin.Data/SECAdmin.Data.csproj.user
+/SECAdmin.Database/bin/Debug
+/SECAdmin.Database/obj/Debug
+/SECAdmin.Database/SECAdmin.Database.sqlproj.user
+/SECAdmin.Entity/bin/Debug
+/SECAdmin.Entity/obj
+/SECAdmin.Tests/SECAdmin.Controller.Test/bin
+/SECAdmin.Tests/SECAdmin.Controller.Test/obj
+/SECAdmin.ViewModel/bin/Debug
+/SECAdmin.ViewModel/obj
+/SECAdmin.Web/bin
+/SECAdmin.Web/obj/Debug
+/SECAdmin.Database/SECAdmin.Database.jfm
+/SECAdmin.Database/SECAdmin.Database.dbmdl
+/.vs/SECAdmin/v15/Server/sqlite3
