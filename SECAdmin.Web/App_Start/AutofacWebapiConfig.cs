@@ -3,6 +3,8 @@ using Autofac.Integration.WebApi;
 using SECAdmin.Data;
 using SECAdmin.Data.Infrastructure;
 using SECAdmin.Data.Repositories;
+using SECAdmin.Services;
+using SECAdmin.Services.Abstract;
 using System.Data.Entity;
 using System.Reflection;
 using System.Web.Http;
@@ -43,10 +45,10 @@ namespace SECAdmin.Web
                    .As(typeof(IEntityBaseRepository<>))
                    .InstancePerRequest();
 
-            // Services
-            //builder.RegisterType<EncryptionService>()
-            //    .As<IEncryptionService>()
-            //    .InstancePerRequest();
+            //Services
+            builder.RegisterType<ClientDataService>()
+                .As<IClientDataService>()
+                .InstancePerRequest();
 
             //builder.RegisterType<MembershipService>()
             //    .As<IMembershipService>()

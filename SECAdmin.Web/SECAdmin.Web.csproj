@@ -205,6 +205,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\ClientDetail\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -259,6 +260,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\ClientDetail\ClientDetailAreaRegistration.cs" />
+    <Compile Include="Areas\ClientDetail\Controllers\ClientDetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -287,6 +290,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\ClientDetail\Models\" />
+    <Folder Include="Areas\ClientDetail\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -297,6 +302,14 @@
     <ProjectReference Include="..\SECAdmin.Entity\SECAdmin.Entity.csproj">
       <Project>{851ECDC0-7B20-4866-AB0A-FD93B94B7FC6}</Project>
       <Name>SECAdmin.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECAdmin.Services\SECAdmin.Services.csproj">
+      <Project>{15B80BAA-4BE8-444D-BE6E-773E3435F138}</Project>
+      <Name>SECAdmin.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECAdmin.ViewModel\SECAdmin.ViewModel.csproj">
+      <Project>{73C91E34-FC9E-46D4-BB55-C03E3E614F51}</Project>
+      <Name>SECAdmin.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -24,7 +24,7 @@
         }
 
         function saveStudentsData () {
-            apiService.post('api/student/saveStudentsData', $scope.createObj.studentRecordsVm, Success, Failed);
+            apiService.post('api/student/savestudentsdata', $scope.createObj.studentRecordsVm, Success, Failed);
         }
 
         function Success (response) {

@@ -29,3 +29,6 @@
 /SECAdmin.Data/Migrations/201805062000463_initial.cs
 /SECAdmin.Data/Migrations/201805062000463_initial.Designer.cs
 /SECAdmin.Data/Migrations/201805062000463_initial.resx
+/SECAdmin.Services/bin/Debug
+/SECAdmin.Services/obj/Debug
+/SECAdmin.ViewModel/SECAdmin.ViewModel.csproj.user
