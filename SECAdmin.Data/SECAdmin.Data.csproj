@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\ClientDetailConfiguration.cs" />
     <Compile Include="Configurations\RoleConfiguration.cs" />
     <Compile Include="Configurations\EntityBaseConfiguration.cs" />
     <Compile Include="Configurations\GlobalVariableConfiguration.cs" />

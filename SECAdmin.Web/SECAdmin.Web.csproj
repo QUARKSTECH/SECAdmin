@@ -221,6 +221,10 @@
     <Content Include="Scripts\spa\layout\topBar.html" />
     <Content Include="Scripts\spa\modules\common.core.js" />
     <Content Include="Scripts\spa\modules\common.ui.js" />
+    <Content Include="Scripts\spa\secAdmin\clientList\clientList.html" />
+    <Content Include="Scripts\spa\secAdmin\clientList\clientListCtrl.js" />
+    <Content Include="Scripts\spa\secAdmin\createRecords\create.html" />
+    <Content Include="Scripts\spa\secAdmin\createRecords\createCtrl.js" />
     <Content Include="Scripts\spa\secAdmin\login\login.html" />
     <Content Include="Scripts\spa\secAdmin\login\loginCtrl.js" />
     <Content Include="Scripts\spa\services\apiService.js" />
@@ -284,7 +288,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\spa\secAdmin\clientList\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SECAdmin.Data\SECAdmin.Data.csproj">

@@ -47,7 +47,9 @@ namespace SECAdmin.Web
                 "~/Scripts/spa/secAdmin/login/loginCtrl.js",
                 "~/Scripts/spa/account/registerCtrl.js",
                 "~/Scripts/spa/home/rootCtrl.js",
-                "~/Scripts/spa/home/indexCtrl.js"
+                "~/Scripts/spa/home/indexCtrl.js",
+                "~/scripts/spa/secAdmin/clientList/clientListCtrl.js",
+                "~/scripts/spa/secAdmin/createRecords/createCtrl.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
