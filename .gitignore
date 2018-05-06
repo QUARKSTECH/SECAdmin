@@ -26,3 +26,6 @@
 /SECAdmin.Database/SECAdmin.Database.dbmdl
 /.vs/SECAdmin/v15/Server/sqlite3
 /SECAdmin.Entity/SECAdmin.Entity.csproj.user
+/SECAdmin.Data/Migrations/201805062000463_initial.cs
+/SECAdmin.Data/Migrations/201805062000463_initial.Designer.cs
+/SECAdmin.Data/Migrations/201805062000463_initial.resx
