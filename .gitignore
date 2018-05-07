@@ -294,3 +294,4 @@ __pycache__/
 /SECAdmin.Services/bin/Debug
 /SECAdmin.Services/obj/Debug
 /SECAdmin.ViewModel/SECAdmin.ViewModel.csproj.user
+SECAdmin.Web.csproj.user
