@@ -17,12 +17,12 @@ namespace SECAdmin.Web
             var config = GlobalConfiguration.Configuration;
 
             AreaRegistration.RegisterAllAreas();
-            //WebApiConfig.Register(config);
+            WebApiConfig.Register(config);
             Bootstrapper.Run();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             GlobalConfiguration.Configuration.EnsureInitialized();
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+            //GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
 }
