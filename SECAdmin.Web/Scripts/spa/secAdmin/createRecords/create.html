@@ -2,7 +2,7 @@
     <form class="form-signin" role="form" novalidate angular-validator name="clientDetailForm" angular-validator-submit="create()">
         <h4 class="form-signin-heading">Create Students Record</h4>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div class="form-group">
                     <label class="sr-only">Certificate No</label>
                     <input type="text" id="inputCertificate" name="inputCertificate" class="form-control" ng-model="createObj.studentRecordsVm.CertificateNo" placeholder="Certificate No"
@@ -23,8 +23,13 @@
                     <input type="text" id="inputDob" name="inputDob" class="form-control" ng-model="createObj.studentRecordsVm.DateOfBirth" placeholder="Date Of Birth"
                            validate-on="blur" required required-message="'Date of birth is required'">
                 </div>
+                <div class="form-group">
+                    <label for="inputDob" class="sr-only">Date Of Birth</label>
+                    <input type="file" id="fileImage" name="fileImage" class="form-control" ng-model="createObj.studentRecordsVm.DateOfBirth"
+                           validate-on="blur" required required-message="'Image is required'">
+                </div>
             </div>
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div class="form-group">
                     <label for="inputCourse" class="sr-only">Course</label>
                     <input type="text" id="inputCourse" name="inputCourse" class="form-control" ng-model="createObj.studentRecordsVm.Course" placeholder="Course"
@@ -45,9 +50,15 @@
                     <input type="text" id="inputCertIssueDate" name="inputCertIssueDate" class="form-control" ng-model="createObj.studentRecordsVm.CertificateIssueDate" placeholder="Certificate Issue Date"
                            validate-on="blur">
                 </div>
-                <div class="col-lg-12" style="margin-left:87px;">
-                    <button class="btn-primary btn-lg" type="submit">Register</button>
+                <div class="form-group">
+                    <label for="inputDob" class="sr-only">Date Of Birth</label>
+                    <input type="file" id="filecertificate" name="filecertificate" class="form-control" ng-model="createObj.studentRecordsVm.DateOfBirth"
+                           validate-on="blur">
                 </div>
+            </div>
+            <div class="col-lg-5"></div>
+            <div class="col-lg-7">
+                <button class="btn-primary btn-lg" type="submit">Save</button>
             </div>
             
         </div>

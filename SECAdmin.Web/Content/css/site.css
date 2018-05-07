@@ -132,7 +132,7 @@ ul.pagination > li
 
 /*login form*/
 .form-signin {
-    max-width: 330px;
+    max-width: 50%;
     padding: 15px;
     margin: 0 auto;
 }
@@ -140,6 +140,7 @@ ul.pagination > li
     .form-signin .form-signin-heading,
     .form-signin .checkbox {
         margin-bottom: 10px;
+        text-align: center
     }
 
     .form-signin .checkbox {
@@ -263,4 +264,16 @@ ul.pagination > li
 
 .red {
     color: red;
+}
+.box {
+    width: 471px;
+    border: 1px solid;
+    padding: 25px;
+    margin: 16px;
+    margin-left: 1px;
+    height: 200px;
+}
+
+.center{
+    align-items:center
 }
