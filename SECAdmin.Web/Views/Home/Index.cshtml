@@ -11,6 +11,9 @@
     <title>SEC Admin</title>
     @System.Web.Optimization.Styles.Render("~/Content/css")
     @System.Web.Optimization.Scripts.Render("~/bundles/modernizr")
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel='stylesheet' type='text/css'>
+    
 </head>
 <body ng-controller="rootCtrl">
     <top-bar></top-bar>
@@ -27,6 +30,10 @@
     </div><!--/row-offcanvas -->
     @System.Web.Optimization.Scripts.Render("~/bundles/vendors")
     @System.Web.Optimization.Scripts.Render("~/bundles/spa")
+    
+    
+    <script src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'></script>
+    <script src='https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js'></script>
 
 </body>
 </html>
