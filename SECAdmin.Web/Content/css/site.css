@@ -74,13 +74,17 @@ ul.pagination > li
         -webkit-transition: all 0.25s ease-out;
         -moz-transition: all 0.25s ease-out;
         transition: all 0.25s ease-out;
-        width: calc(100% + 220px);
+        /*width: calc(100% + 220px);*/
+        width: 100%;
     }
-
-    .row-offcanvas-left {
+    .login-content {
+        width: 100%;
+        max-width: 100% !important;
+        margin: 10px 10px;
+    }
+        /*.row-offcanvas-left {
         left: -220px;
-    }
-
+    }*/
         .row-offcanvas-left.active {
             left: 0;
         }
@@ -94,6 +98,10 @@ ul.pagination > li
 @media (max-width: 650px) {
     .movieDescription {
         margin-left: 240px !important;
+    }
+
+    .form-signin {
+        max-width: 94% !important;
     }
 }
 
@@ -187,6 +195,8 @@ ul.pagination > li
 .has-error .control-label {
     color: #FFB658 !important;
 }
+
+
 
 .movieDescription {
     margin-left: 335px;
@@ -287,4 +297,15 @@ ul.pagination > li
     box-sizing: border-box;
     height: 180px;
     border-radius: 4px;
+}
+.login-content {
+    width: 370px;
+    margin: 30 auto;
+    margin-top: 50px;
+
+}
+.register_link {
+    float: right;
+    position: relative;
+    top: 3px;
 }
