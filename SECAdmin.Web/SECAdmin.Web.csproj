@@ -270,6 +270,7 @@
     <Compile Include="Areas\ClientDetail\Controllers\ClientDetailController.cs" />
     <Compile Include="Areas\FileUpload\Controllers\FileUploadController.cs" />
     <Compile Include="Areas\FileUpload\FileUploadAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

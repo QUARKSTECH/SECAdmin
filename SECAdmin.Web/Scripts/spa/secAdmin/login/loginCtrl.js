@@ -22,7 +22,7 @@
                 if ($rootScope.previousState)
                     $location.path($rootScope.previousState);
                 else
-                    $location.path('/');
+                    $location.path('/clientlist');
             }
             else {
                 notificationService.displayError('Login failed. Try again.');

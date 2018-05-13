@@ -46,13 +46,7 @@ namespace SECAdmin.Web
                    .InstancePerRequest();
 
             //Services
-            builder.RegisterType<ClientDataService>()
-                .As<IClientDataService>()
-                .InstancePerRequest();
-
-            builder.RegisterType<FileUploadService>()
-                .As<IFileUploadService>()
-                .InstancePerRequest();
+            builder.RegisterAssemblyTypes(typeof(ClientDataService).Assembly).Where(t => t.Name.EndsWith("Service")).AsImplementedInterfaces().InstancePerRequest();
 
             Container = builder.Build();
 

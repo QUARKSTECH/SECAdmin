@@ -43,7 +43,7 @@
                 file: $file
             }).progress(function (evt) {
             }).success(function (data, status, headers, config) {
-                notificationService.displaySuccess(data.FileName + ' uploaded successfully');
+                //notificationService.displaySuccess(data.FileName + ' uploaded successfully');
                 callback(data);
             }).error(function (data, status, headers, config) {
                 notificationService.displayWarning(data.Message);

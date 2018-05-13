@@ -30,6 +30,7 @@
         function Success (response) {
             $scope.createObj.studentRecordsVm = {};
             notificationService.displaySuccess("Records saved successfully");
+            $location.path('/clientlist');
         }
 
         function Failed() {
@@ -61,6 +62,7 @@
                     $scope.createObj.studentRecordsVm.ProfileImagePath = response.responseData.FileName;
                 else
                     $scope.createObj.studentRecordsVm.CertificateImagePath = response.responseData.FileName;
+                notificationService.displaySuccess('File uploaded successfully');
             }
             else {
                 notificationService.displayError('Invalid image please try again');
