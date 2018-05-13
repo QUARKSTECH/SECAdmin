@@ -20,6 +20,7 @@ namespace SECAdmin.ViewModel
         public string CertificateIssueDate { get; set; }
         public string CertificateName { get; set; }
         public string ProfileImagePath { get; set; }
+        public string CertificateImagePath { get; set; }
 
         //common columns
         public DateTime CreatedDate { get; set; }

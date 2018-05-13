@@ -3,9 +3,9 @@
 
     app.controller('createCtrl', createCtrl);
 
-    createCtrl.$inject = ['$scope', 'membershipService', 'notificationService', '$rootScope', '$location', '$routeParams','apiService'];
+    createCtrl.$inject = ['$scope', 'membershipService', 'notificationService', '$rootScope', '$location', '$routeParams', 'apiService','fileUploadService'];
 
-    function createCtrl($scope, membershipService, notificationService, $rootScope, $location, $routeParams, apiService) {
+    function createCtrl($scope, membershipService, notificationService, $rootScope, $location, $routeParams, apiService, fileUploadService) {
 
         $scope.createObj = {
             studentId: $routeParams.id,
@@ -42,6 +42,29 @@
 
         function getStudentDataSuccess(response) {
             $scope.createObj.studentRecordsVm = response;
+        }
+        var type = "";
+        $scope.uploadImage = function ($files, typ) {
+            type = typ;
+            $scope.customerImage = $files;
+            if ($scope.customerImage[0].type == "image/png" || $scope.customerImage[0].type == "image/jpeg" && $scope.customerImage[0].size < 10485760 && $scope.customerImage[0].type != "") {
+                fileUploadService.uploadCustomerImage($scope.customerImage, saveImage);
+            }
+            else {
+                angular.element("input[type='file']").val(null);
+                return false
+            }
+        }
+        function saveImage(response) {
+            if (response.status == 1) {
+                if (type == 'Profile')
+                    $scope.createObj.studentRecordsVm.ProfileImagePath = response.responseData.FileName;
+                else
+                    $scope.createObj.studentRecordsVm.CertificateImagePath = response.responseData.FileName;
+            }
+            else {
+                notificationService.displayError('Invalid image please try again');
+            }
         }
     }
 

@@ -295,3 +295,4 @@ __pycache__/
 /SECAdmin.Services/obj/Debug
 /SECAdmin.ViewModel/SECAdmin.ViewModel.csproj.user
 SECAdmin.Web.csproj.user
+/SECAdmin.Web/Images/ProfilePic

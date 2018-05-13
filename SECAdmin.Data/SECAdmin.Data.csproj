@@ -83,9 +83,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\SQLSPHelper.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201805070820380_one.cs" />
-    <Compile Include="Migrations\201805070820380_one.Designer.cs">
-      <DependentUpon>201805070820380_one.cs</DependentUpon>
+    <Compile Include="Migrations\201805131747137_one.cs" />
+    <Compile Include="Migrations\201805131747137_one.Designer.cs">
+      <DependentUpon>201805131747137_one.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,8 +103,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805070820380_one.resx">
-      <DependentUpon>201805070820380_one.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805131747137_one.resx">
+      <DependentUpon>201805131747137_one.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

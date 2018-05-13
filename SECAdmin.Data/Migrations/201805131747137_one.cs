@@ -27,7 +27,7 @@ namespace SECAdmin.Data.Migrations
                 c => new
                     {
                         UserRoleId = c.Long(nullable: false, identity: true),
-                        KeyId = c.Guid(nullable: false),
+                        KeyId = c.Guid(nullable: false, defaultValueSql: "newsequentialid()"),
                         UserId = c.Long(nullable: false),
                         RoleId = c.Long(nullable: false),
                         CreatedDate = c.DateTime(nullable: false),
@@ -115,7 +115,7 @@ namespace SECAdmin.Data.Migrations
                 c => new
                     {
                         ClientDetailId = c.Long(nullable: false, identity: true),
-                        KeyId = c.Guid(nullable: false),
+                        KeyId = c.Guid(nullable: false, defaultValueSql: "newsequentialid()"),
                         CertificateNo = c.String(nullable: false, maxLength: 100),
                         FullName = c.String(nullable: false, maxLength: 200),
                         FatherName = c.String(nullable: false, maxLength: 200),
@@ -126,6 +126,7 @@ namespace SECAdmin.Data.Migrations
                         CertificateIssueDate = c.String(nullable: false, maxLength: 200),
                         CertificateName = c.String(maxLength: 200),
                         ProfileImagePath = c.String(nullable: false, maxLength: 300),
+                        CertificateImagePath = c.String(nullable: false, maxLength: 300),
                         CreatedDate = c.DateTime(precision: 7, storeType: "datetime2"),
                         ModifiedDate = c.DateTime(precision: 7, storeType: "datetime2"),
                         CreatedBy = c.Long(),

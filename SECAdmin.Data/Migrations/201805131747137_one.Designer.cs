@@ -13,7 +13,7 @@ namespace SECAdmin.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201805070820380_one"; }
+            get { return "201805131747137_one"; }
         }
         
         string IMigrationMetadata.Source

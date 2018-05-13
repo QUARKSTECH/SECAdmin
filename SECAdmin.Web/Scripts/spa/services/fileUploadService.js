@@ -10,7 +10,8 @@
         $rootScope.upload = [];
 
         var service = {
-            uploadImage: uploadImage
+            uploadImage: uploadImage,
+            uploadCustomerImage: uploadCustomerImage
         }
 
         function uploadImage($files, movieId, callback) {
@@ -34,6 +35,20 @@
             }
         }
 
+        function uploadCustomerImage($files, callback) {
+            var $file = $files;
+            $rootScope.upload = $upload.upload({
+                url: "api/fileupload/images",
+                method: "POST",
+                file: $file
+            }).progress(function (evt) {
+            }).success(function (data, status, headers, config) {
+                notificationService.displaySuccess(data.FileName + ' uploaded successfully');
+                callback(data);
+            }).error(function (data, status, headers, config) {
+                notificationService.displayWarning(data.Message);
+            });
+        }
         return service;
     }
 

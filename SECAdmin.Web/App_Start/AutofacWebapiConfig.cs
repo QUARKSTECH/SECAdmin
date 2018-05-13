@@ -50,9 +50,9 @@ namespace SECAdmin.Web
                 .As<IClientDataService>()
                 .InstancePerRequest();
 
-            //builder.RegisterType<MembershipService>()
-            //    .As<IMembershipService>()
-            //    .InstancePerRequest();
+            builder.RegisterType<FileUploadService>()
+                .As<IFileUploadService>()
+                .InstancePerRequest();
 
             Container = builder.Build();
 

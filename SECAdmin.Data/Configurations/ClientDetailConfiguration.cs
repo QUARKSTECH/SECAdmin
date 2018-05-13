@@ -31,6 +31,7 @@ namespace SECAdmin.Data.Configurations
             Property(x => x.CertificateIssueDate).HasColumnName(@"CertificateIssueDate").IsRequired().HasColumnType("nvarchar").HasMaxLength(200);
             Property(x => x.CertificateName).HasColumnName(@"CertificateName").IsOptional().HasColumnType("nvarchar").HasMaxLength(200);
             Property(x => x.ProfileImagePath).HasColumnName(@"ProfileImagePath").IsRequired().HasColumnType("nvarchar").HasMaxLength(300);
+            Property(x => x.CertificateImagePath).HasColumnName(@"CertificateImagePath").IsRequired().HasColumnType("nvarchar").HasMaxLength(300);
         }
     }
 }
