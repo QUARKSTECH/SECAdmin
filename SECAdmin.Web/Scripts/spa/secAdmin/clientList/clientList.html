@@ -54,6 +54,9 @@
 
 <script>
     $(document).ready(function () {
-        $('#example').DataTable();
+        $('#example').DataTable({
+            bAutoWidth: true,
+            "bInfo": false
+        });
     });
 </script>

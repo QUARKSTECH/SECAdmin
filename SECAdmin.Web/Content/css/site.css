@@ -140,7 +140,7 @@ ul.pagination > li
 
 /*login form*/
 .form-signin {
-    max-width: 50%;
+    max-width: 80%;
     padding: 15px;
     margin: 15px auto;
     box-shadow: 1px 1px 5px #ccc;

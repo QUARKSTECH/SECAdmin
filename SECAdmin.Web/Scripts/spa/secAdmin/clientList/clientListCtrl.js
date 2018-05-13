@@ -22,7 +22,6 @@
 
         function Success(response) {
             $scope.studentListVm.studentlist = response.data.responseData;
-            notificationService.displaySuccess("Records saved successfully");
         }
 
         function Failed() {
