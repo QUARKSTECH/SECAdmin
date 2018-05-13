@@ -37,5 +37,17 @@ namespace SECAdmin.Web.Areas.ClientDetail.Controllers
                 return Request.CreateResponse(HttpStatusCode.OK, rm);
             });
         }
+
+        [HttpGet]
+        [Route("getallstudents")]
+        public HttpResponseMessage GeAllStudent(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                ResponseViewModel rm = new ResponseViewModel();
+                rm = _iclientDataService.GetAllStudents();
+                return Request.CreateResponse(HttpStatusCode.OK, rm);
+            });
+        }
     }
 }

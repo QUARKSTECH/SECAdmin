@@ -3,14 +3,31 @@
 
     app.controller('clientListCtrl', clientListCtrl);
 
-    clientListCtrl.$inject = ['$scope', 'membershipService', 'notificationService', '$rootScope', '$location'];
+    clientListCtrl.$inject = ['$scope', 'membershipService', 'notificationService', '$rootScope', '$location', 'apiService'];
 
-    function clientListCtrl($scope, membershipService, notificationService, $rootScope, $location) {
+    function clientListCtrl($scope, membershipService, notificationService, $rootScope, $location, apiService) {
         $scope.studentListVm = {
-
+            studentlist: {}
         };
 
+        function getAllStudent() {
+            apiService.get('api/student/getallstudents', '', Success, Failed);
+        }
+        //default on load
+        $scope.$on('$viewContentLoaded', function (a) {
+            getAllStudent();
+        });
+
         
+
+        function Success(response) {
+            $scope.studentListVm.studentlist = response.data.responseData;
+            notificationService.displaySuccess("Records saved successfully");
+        }
+
+        function Failed() {
+            notificationService.displayError("Something went wrong. Please try again.");
+        }
     }
 
 })(angular.module('secAdmin'));

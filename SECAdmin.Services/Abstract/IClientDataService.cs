@@ -10,5 +10,6 @@ namespace SECAdmin.Services.Abstract
     public interface IClientDataService
     {
         void AddUpdateStudentRecords(ClientDetailViewModel clientDetailVm);
+        ResponseViewModel GetAllStudents();
     }
 }

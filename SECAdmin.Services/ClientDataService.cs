@@ -4,7 +4,8 @@ using SECAdmin.Data.Repositories;
 using SECAdmin.Entity;
 using SECAdmin.Services.Abstract;
 using SECAdmin.ViewModel;
-
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SECAdmin.Services
 {
@@ -24,6 +25,18 @@ namespace SECAdmin.Services
             var ClientData = Mapper.Map<ClientDetailViewModel, ClientDetail>(clientDataVm);
             _clientDetailRepository.Add(ClientData);
             _unitOfWork.Commit();
+
+        }
+
+        public ResponseViewModel GetAllStudents()
+        {
+            ResponseViewModel rm = new ResponseViewModel();
+            var clientList = _clientDetailRepository.GetAll().ToList();
+            var ClientData = Mapper.Map<List<ClientDetail>, List<ClientDetailViewModel>>(clientList);
+            rm.responseData = ClientData;
+            rm.status = 1;
+            rm.message = Constants.Retreived;
+            return rm;
 
         }
     }

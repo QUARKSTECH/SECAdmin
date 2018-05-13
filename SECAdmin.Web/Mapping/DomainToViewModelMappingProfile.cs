@@ -1,10 +1,7 @@
 ﻿using AutoMapper;
 using SECAdmin.Entity;
 using SECAdmin.ViewModel;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace SECAdmin.Web.Mapping
 {
@@ -23,6 +20,7 @@ namespace SECAdmin.Web.Mapping
             //    .ForMember(vm => vm.ID, map => map.MapFrom(m => m.Tract.ID)) //For Reference
 
             CreateMap<ClientDetailViewModel, ClientDetail>();
+            CreateMap<ClientDetailViewModel, ClientDetail>().ReverseMap();
 
         }
     }
