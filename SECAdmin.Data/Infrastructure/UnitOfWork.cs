@@ -8,6 +8,7 @@
         public UnitOfWork(IDbFactory dbFactory)
         {
             _dbFactory = dbFactory;
+            _dbContext = _dbContext ?? _dbFactory.Init();
         }
 
         public SECAdminContext DbContext => _dbContext ?? (_dbContext = _dbFactory.Init());

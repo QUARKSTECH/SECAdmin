@@ -6,9 +6,11 @@ using System.Data.Entity.Infrastructure;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SECAdmin.Web.Infrastructure.Core
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ApiControllerBase : ApiController
     {
         protected readonly IEntityBaseRepository<Error> _errorsRepository;

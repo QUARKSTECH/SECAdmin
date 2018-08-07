@@ -3,11 +3,10 @@ using SECAdmin.Data.Repositories;
 using SECAdmin.Entities;
 using SECAdmin.ViewModel;
 using SECAdmin.Web.Infrastructure.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Web.Http;
 
 namespace SECAdmin.Web.Controllers
@@ -19,6 +18,9 @@ namespace SECAdmin.Web.Controllers
         //private readonly ICommonService _commonService;
         //private readonly IMembershipService _membershipService;
         //private AuthRepository _repo = null;
+        private const string URL = "http://smsp.myoperator.co/api/postsms.php";
+        private const string URL1 = "http://sms.quarkstech.com/api/postsms.php";
+        private const string xmlString = "";
         public AccountController(//ICommonService commonService, IMembershipService membershipService,
             IEntityBaseRepository<Error> _errorsRepository, IUnitOfWork _unitOfWork)
             : base(_errorsRepository, _unitOfWork)
@@ -55,6 +57,49 @@ namespace SECAdmin.Web.Controllers
 
                 return response;
             });
+        }
+
+        [AllowAnonymous]
+        [Route("sendsms")]
+        [HttpPost]
+        public HttpResponseMessage SendSms(HttpRequestMessage request, LoginViewModel user)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, new { success = true }); ;
+
+                if (user != null)
+                {
+                    //var data = postXMLData(URL, xmlString);
+                    response = request.CreateResponse(HttpStatusCode.OK, new { success = true });
+                }
+                else
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, new { success = false });
+
+                return response;
+            });
+        }
+
+        private static string postXMLData(string destinationUrl, string requestXml)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(destinationUrl);
+            byte[] bytes;
+            bytes = Encoding.ASCII.GetBytes(requestXml);
+            request.ContentType = "text/xml; encoding='utf-8'";
+            request.ContentLength = bytes.Length;
+            request.Method = "POST";
+            Stream requestStream = request.GetRequestStream();
+            requestStream.Write(bytes, 0, bytes.Length);
+            requestStream.Close();
+            HttpWebResponse response;
+            response = (HttpWebResponse)request.GetResponse();
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                Stream responseStream = response.GetResponseStream();
+                string responseStr = new StreamReader(responseStream).ReadToEnd();
+                return responseStr;
+            }
+            return null;
         }
     }
 }
