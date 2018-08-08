@@ -62,13 +62,13 @@ namespace SECAdmin.Web.Controllers
         [AllowAnonymous]
         [Route("sendsms")]
         [HttpPost]
-        public HttpResponseMessage SendSms(HttpRequestMessage request, LoginViewModel user)
+        public HttpResponseMessage SendSms(HttpRequestMessage request, [FromBody] string xmlString)
         {
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, new { success = true }); ;
 
-                if (user != null)
+                if (xmlString != null)
                 {
                     //var data = postXMLData(URL, xmlString);
                     response = request.CreateResponse(HttpStatusCode.OK, new { success = true });
