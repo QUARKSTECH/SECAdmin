@@ -70,7 +70,7 @@ namespace SECAdmin.Web.Controllers
 
                 if (xmlString != null)
                 {
-                    //var data = postXMLData(URL, xmlString);
+                    var data = postXMLData(URL, xmlString);
                     response = request.CreateResponse(HttpStatusCode.OK, new { success = true });
                 }
                 else
