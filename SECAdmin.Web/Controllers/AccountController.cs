@@ -3,10 +3,12 @@ using SECAdmin.Data.Repositories;
 using SECAdmin.Entities;
 using SECAdmin.ViewModel;
 using SECAdmin.Web.Infrastructure.Core;
+using System;
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web.Http;
 
 namespace SECAdmin.Web.Controllers
@@ -67,9 +69,12 @@ namespace SECAdmin.Web.Controllers
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, new { success = true }); ;
-
                 if (xmlString != null)
                 {
+                    var test = xmlString.Split(new string[] { "spc" }, StringSplitOptions.None);
+                    xmlString = test[0] + "%0a" + test[1]+ "%0a" + test[2]+ "%0a"+test[3];
+                    //Regex pattern = new Regex(@"(^|spc)($|)");//new Regex("[spc]");
+                    //pattern.Replace(xmlString, "%0a");
                     var data = postXMLData(URL, xmlString);
                     response = request.CreateResponse(HttpStatusCode.OK, new { success = true });
                 }
