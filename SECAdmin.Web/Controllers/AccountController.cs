@@ -85,6 +85,35 @@ namespace SECAdmin.Web.Controllers
             });
         }
 
+        [AllowAnonymous]
+        [Route("sendsmsdynamic")]
+        [HttpPost]
+        public HttpResponseMessage SendSmsMultipleFileds(HttpRequestMessage request, [FromBody] string xmlString)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, new { success = true }); ;
+                if (xmlString != null)
+                {
+                    var test = xmlString.Split(new string[] { "spc" }, StringSplitOptions.None);
+                    var xmlData = "";
+                    for (int i = 0; i < test.Length; i++)
+                    {
+                        if (i < test.Length - 1)
+                            xmlData += test[i] + "%0a";
+                        else
+                            xmlData += test[i];
+                    }
+                    var data = postXMLData(URL, xmlData);
+                    response = request.CreateResponse(HttpStatusCode.OK, new { success = true });
+                }
+                else
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, new { success = false });
+
+                return response;
+            });
+        }
+
         private static string postXMLData(string destinationUrl, string requestXml)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(destinationUrl);
